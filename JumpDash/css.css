@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #81bb97;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  text-align: center;
+}
+
+.column {
+  display: flex;
+  flex-direction:row;
+  gap: 100px;
+  
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #001aff;
+  color: #fff;
+  transition: background-color 0.3s;
+  height: 150px;
+  width: 150px; /* Set a fixed wasdadasdadsdadaidth */
+  text-align: center;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+h1 {
+  color: black;
+  text-align:center;
+  font-size: 100px;
+}
