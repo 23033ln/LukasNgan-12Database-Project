@@ -53,8 +53,8 @@ function endGame(_player, _obstacle){
 
 
 
-const SCREEN_WIDTH = 400;
-const SCREEN_HEIGHT = 200;
+const SCREEN_WIDTH = 1500;
+const SCREEN_HEIGHT = 400;
 const PLAYER_HEIGHT = 25;
 const PLAYER_WIDTH = 25;
 
