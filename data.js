@@ -9,5 +9,9 @@ const firebaseConfig = {
   measurementId: "G-GGDJMQTZPB"
 };
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// Set up the connection to your Firebase Realtime Database
+firebase.initializeApp(firebaseConfig);
+
+// This log prints the firebase object to the console to show that it is working.
+// As soon as you have the script working, delete this log.
+console.log(firebase);
