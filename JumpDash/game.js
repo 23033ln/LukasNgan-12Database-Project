@@ -288,3 +288,16 @@ function showdeathscreen() {
 //data base code in here//
 
 }
+//for the levels beaten function//
+function displayscore() {
+if (condition) {
+  
+} 
+}
+
+//for the levels beaten function//
+function displayscore() {
+if (condition) {
+  
+} 
+}
