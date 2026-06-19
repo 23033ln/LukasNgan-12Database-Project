@@ -24,9 +24,21 @@ function fb_popupLogin() {
     
   });
 }
-if (condition) {
-  
-}
+
+// to make sure that you have to login before you can go onto the website from buttons //
+
+const fb_Login = false;
+
+document.getElementById('game').addEventListener('click', function() {
+ if (!fb_Login) {
+     window.location.href = '/login?redirect= https://23033ln.github.io/LukasNgan-12Database-Project/gamemenu.html' + encodeURIComponent(window.location.href);
+ } else {
+   executeFeature();
+ }
+});
+
+
+
 
 highscoreTable = {
   game1: {
