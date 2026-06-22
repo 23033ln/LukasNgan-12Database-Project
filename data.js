@@ -9,5 +9,4 @@ const firebaseConfig = {
   measurementId: "G-GGDJMQTZPB"
 };
 // Initialize Firebase
-// Set up the connection to your Firebase Realtime Database
 firebase.initializeApp(firebaseConfig);

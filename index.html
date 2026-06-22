@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Login</title>
+  <title>Loading</title>
   <meta charset="UTF-8">
 
   <!-- Firebase App (core Firebase SDK) is always required & must be listed 1st -->
@@ -10,6 +10,10 @@
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+    <script src="data.js"></script>
+  <script src="DataBase.js"></script>
+
 
   <meta name="description" content="12COMP P5.play">
   <meta name="keywords" content="12COMP, P5.play">
@@ -28,6 +32,7 @@
 
   <div class="container">
         <div class="column">
+          
             <button onclick="fb_login()">login</button>
            <button onclick="location.href='gamemenu.html'">Games</button>
         </div>
@@ -38,8 +43,7 @@
 ****************************************************-->
 <body>  
   <link rel="stylesheet" href="gamemenu.css">
-  <script src="DataBase.js"></script>
-  <script src="data.js"></script>
+
 </body>
 </html>
 <!--***************************************************

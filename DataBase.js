@@ -25,40 +25,32 @@ function fb_popupLogin() {
   });
 }
 
-// to make sure that you have to login before you can go onto the website from buttons //
 
-const fb_Login = false;
 
-document.getElementById('game').addEventListener('click', function() {
- if (!fb_Login) {
-     window.location.href = '/login?redirect= https://23033ln.github.io/LukasNgan-12Database-Project/gamemenu.html' + encodeURIComponent(window.location.href);
- } else {
-   executeFeature();
- }
-});
 
 
 
 
 highscoreTable = {
-  game1: {
+  
+  JumpDash: {
     users: {
-      lukas: 12324432523545245,
-      Coby: 12343567891234567890,
-      Pasha: 897,
-      Josh: 322323,
-      Callum: 123456789123456
+      lukas: 10,
+      Coby: 5,
+      Pasha: 6,
+      Josh: 9,
+      Callum: 4
     }
 
   },
 
-  game2: {
+  GeoDash: {
     users: {
-      lukas: 23266476645656,
-      coby: 16465464654,
-      pasha: 64565464567,
-      josh: 35464565464,
-      callum: 64564564512
+      lukas: 1700,
+      coby: 240,
+      pasha: 500,
+      josh: 2012,
+      callum: 1923
 
     }
 
