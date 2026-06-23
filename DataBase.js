@@ -10,7 +10,7 @@ function fb_login() {
     GLOBAL_user = _user;
     console.log("User is logged in")
   
-  await firebase.database().ref('games/users/' + GLOBAL_user.uid).update(
+  await firebase.database().ref('Users that have a account or signed in/users/' + GLOBAL_user.uid).update(
       {
         name: GLOBAL_user.displayName,
         email: GLOBAL_user.email,
