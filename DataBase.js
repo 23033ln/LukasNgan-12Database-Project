@@ -7,13 +7,9 @@ function fb_login() {
 //to check if the user is login//
  async function fb_handleLogin(_user) {
   if (_user) {
-
     GLOBAL_user = _user;
     console.log("User is logged in")
   
-
-
-
   await firebase.database().ref('games/users/' + GLOBAL_user.uid).update(
       {
         name: GLOBAL_user.displayName,
