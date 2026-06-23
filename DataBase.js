@@ -5,11 +5,23 @@ function fb_login() {
   authenticationListener = firebase.auth().onAuthStateChanged(fb_handleLogin);
 }
 //to check if the user is login//
-function fb_handleLogin(_user) {
+ async function fb_handleLogin(_user) {
   if (_user) {
-    console.log("User is logged in")
+
     GLOBAL_user = _user;
-    GLOBAL_user = result. user;
+    console.log("User is logged in")
+  
+
+
+
+  await firebase.database().ref('games/users/' + GLOBAL_user.uid).update(
+      {
+        name: GLOBAL_user.displayName,
+        email: GLOBAL_user.email,
+        profile: GLOBAL_user.photoURL
+      }
+    );
+
   } else {
     console.log("User is NOT logged in - Starting the popup process")
     fb_popupLogin();
@@ -24,10 +36,6 @@ function fb_popupLogin() {
     
   });
 }
-
-
-
-
 
 
 
@@ -59,3 +67,6 @@ highscoreTable = {
 }
 
 firebase.database().ref('/').set(highscoreTable)
+
+
+ 
