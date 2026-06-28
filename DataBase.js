@@ -15,8 +15,15 @@ function fb_login() {
         name: GLOBAL_user.displayName,
         email: GLOBAL_user.email,
         profile: GLOBAL_user.photoURL
+        
       }
     );
+   await firebase.database().ref('Users that have a account or signed in/users/' + GLOBAL_user.uid).push({
+     name: GLOBAL_user.displayName,
+     email: GLOBAL_user.email,
+     loginTime: firebase.database.ServerValue.TIMESTAMP
+   });
+
 
   } else {
     console.log("User is NOT logged in - Starting the popup process")
