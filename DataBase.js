@@ -9,10 +9,13 @@ function fb_login() {
   if (_user) {
     GLOBAL_user = _user;
     console.log("User is logged in")
+    let Name = prompt("whats your name");
+    let Username = prompt("What do you want to be your username " +name)
+    let score = 100
   
   await firebase.database().ref('Users that have a account or signed in/users/' + GLOBAL_user.uid).update(
       {
-        name: GLOBAL_user.displayName,
+        name: GLOBAL_user.displayName, Username, score,
         email: GLOBAL_user.email,
         profile: GLOBAL_user.photoURL
         
@@ -69,7 +72,7 @@ highscoreTable = {
 
 }
 
-firebase.database().ref('/').set(highscoreTable)
+firebase.database().ref('/').update(highscoreTable)
 
 
  
