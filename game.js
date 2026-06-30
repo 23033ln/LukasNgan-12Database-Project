@@ -285,19 +285,7 @@ function showdeathscreen() {
   textSize(100);
   text("You Died", width / 2 - 150, height / 2);
   noLoop();
-//data base code in here//
 
 }
-//for the levels beaten function//
-function displayscore() {
-if (condition) {
-  
-} 
-}
+//for the levels beaten function and it saves the score to the user//
 
-//for the levels beaten function//
-function displayscore() {
-if (condition) {
-  
-} 
-}
