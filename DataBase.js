@@ -11,11 +11,12 @@ function fb_login() {
     console.log("User is logged in")
     let Name = prompt("whats your name");
     let Username = prompt("What do you want to be your username " +name)
-    let score = 100
+    let GeoDashscore = 100
+    let Jumpdashlevelsbeaten = 5
   
   await firebase.database().ref('Users that have a account or signed in/users/' + GLOBAL_user.uid).update(
       {
-        name: GLOBAL_user.displayName, Username, score,
+        name: GLOBAL_user.displayName, Username, Jumpdashlevelsbeaten, GeoDashscore,
         email: GLOBAL_user.email,
         profile: GLOBAL_user.photoURL
         
