@@ -62,6 +62,7 @@ const PLAYER_WIDTH = 25;
 const OBSTACLE_HEIGHT = PLAYER_HEIGHT;
 const OBSTACLE_WIDTH = PLAYER_WIDTH;
 
+var GLOBAL_user;
 var spawnDist = 0;
 var nextSpawn = 0;
 var score = 0;
@@ -164,6 +165,7 @@ function endScreen(){
     text("your score was: "+score, 50, 110);
     textSize(14);
     text("press any key to restart", 50, 150);
+    firebase.database().ref(login/users/${GLOBAL_user.uid}/Geodashscore + score).set();
 }
 
 function resetGame(){
@@ -173,11 +175,6 @@ function resetGame(){
     score = 0;
 }
 
-function displayscore() {
-if (condition) {
-    
-}
-}
 
 /*******************************************************/
 //  END OF APP

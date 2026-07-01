@@ -264,7 +264,7 @@ function showendscreen() {
   text("Level Finished! Score: " + Math.floor(score), width / 2 - 200, height / 2);
   noLoop();
   //data base code in here//
-
+firebase.database().ref(login/users/${Jumpdashscore}/+score).set();
 }
 
 function keyPressed() {
@@ -283,9 +283,9 @@ function keyPressed() {
 function showdeathscreen() {
   fill(0);
   textSize(100);
-  text("You Died", width / 2 - 150, height / 2);
+  text("You Died Score: " + Math.floor(score), width / 2 - 150, height / 2);
   noLoop();
-
+firebase.database().ref(login/users/${Jumpdashscore}/ + score).set();
 }
 //for the levels beaten function and it saves the score to the user//
 

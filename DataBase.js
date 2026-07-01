@@ -1,4 +1,5 @@
 var GLOBAL_user;
+
 var authenticationListener; 
 
 function fb_login() {
@@ -11,10 +12,7 @@ function fb_login() {
     console.log("User is logged in")
     let Name = prompt("whats your name");
     let Username = prompt("What do you want to be your username " +name)
-    let GeoDashscore = 100
-    let Jumpdashlevelsbeaten = 5
-  
-  await firebase.database().ref('Users that have a account or signed in/users/' + GLOBAL_user.uid).update(
+  await firebase.database().ref('login/users/' + GLOBAL_user.uid).update(
       {
         name: GLOBAL_user.displayName, Username, Jumpdashlevelsbeaten, GeoDashscore,
         email: GLOBAL_user.email,
@@ -22,13 +20,15 @@ function fb_login() {
         
       }
     );
-   await firebase.database().ref('Users that have a account or signed in/users/' + GLOBAL_user.uid).push({
+   await firebase.database().ref('login/users/' + GLOBAL_user.uid).push({
      name: GLOBAL_user.displayName,
      email: GLOBAL_user.email,
      loginTime: firebase.database.ServerValue.TIMESTAMP
    });
 
+database().ref('login/users/' + GLOBAL_user.uid + GeoDashscore).update({
 
+});
   } else {
     console.log("User is NOT logged in - Starting the popup process")
     fb_popupLogin();
@@ -43,7 +43,6 @@ function fb_popupLogin() {
     
   });
 }
-
 
 
 highscoreTable = {
