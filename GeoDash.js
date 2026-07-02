@@ -137,6 +137,8 @@ function startScreen(){
     text("Press space to jump", 50, 150);
 }
 
+
+
 function gameScreen(){
     background("#C39BD3");
     allSprites.visible = true;
