@@ -25,20 +25,40 @@
   <!-- Include all your firebase libraries and scripts here -->
 
 </head>
-
-  <div class="container">
-        <div class="column">
-            <h2> GeoDash LeaderBoards</h2>
-             <div id="databaseOutput"></div>
-
-            <h2> JumpDash LeaderBoards</h2>
-            <div id="databaseOutput"></div>
-        </div>
+<div style="flex: 1; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+        <h3> GeoDash Top 5 </h3>
+        <table border="1" style="width:100%; text-align:left; border-collapse: collapse;">
+            <thead>
+                <tr style="background-color: #e6f7ff;">
+                    <th style="padding: 8px;">Rank</th>
+                    <th style="padding: 8px;">Player</th>
+                    <th style="padding: 8px;">Max Score</th>
+                </tr>
+            </thead>
+            <tbody id="geoDashRows">
+                <tr><td colspan="3" style="text-align:center; padding:10px;">Loading...</td></tr>
+            </tbody>
+        </table>
     </div>
-</body>
-<!--***************************************************
-  BODY
-****************************************************-->
+
+    <!-- JUMPDASH LEADERBOARD (TOTAL ACCUMULATED) -->
+    <div style="flex: 1; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+        <h3> JumpDash Top 5 </h3>
+        <table border="1" style="width:100%; text-align:left; border-collapse: collapse;">
+            <thead>
+                <tr style="background-color: #f6ffed;">
+                    <th style="padding: 8px;">Rank</th>
+                    <th style="padding: 8px;">Player</th>
+                    <th style="padding: 8px;">Total Beaten</th>
+                </tr>
+            </thead>
+            <tbody id="jumpDashRows">
+                <tr><td colspan="3" style="text-align:center; padding:10px;">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>*
 <body>  
   <link rel="stylesheet" href="gamemenu.css">
   

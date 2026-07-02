@@ -258,14 +258,6 @@ function func2Call(cube, spikes) {
   }
 }
 
-function showendscreen() {
-  fill(0);
-  textSize(50);
-  text("Level Finished! Score: " + Math.floor(score), width / 2 - 200, height / 2);
-  noLoop();
-  //data base code in here//
-firebase.database().ref(login/users/${Jumpdashscore}/+score).set();
-}
 
 function keyPressed() {
   if (key === 'p' || key === 'P') {
@@ -279,13 +271,30 @@ function keyPressed() {
   }
 }
 
+function showendscreen() {
+  fill(0);
+  textSize(50);
+  let finalScore = Math.floor(score); 
+  text("Level Finished! Score: " + finalScore, width / 2 - 200, height / 2);
+  noLoop();
+   if (typeof window.saveGameScore === 'function') {
+    window.saveGameScore('JumpDash', finalScore);
+  } else {
+    console.error("Firebase config script is missing or loaded incorrectly!");
+  }
+}
 
 function showdeathscreen() {
   fill(0);
   textSize(100);
-  text("You Died Score: " + Math.floor(score), width / 2 - 150, height / 2);
+  let finalScore = Math.floor(score); 
+  text("You Died Score: " + finalScore, width / 2 - 150, height / 2);
   noLoop();
-firebase.database().ref(login/users/${Jumpdashscore}/ + score).set();
+  
+  if (typeof window.saveGameScore === 'function') {
+    window.saveGameScore('JumpDash', finalScore);
+  } else {
+    console.error("Firebase config script is missing or loaded incorrectly!");
+  }
 }
-//for the levels beaten function and it saves the score to the user//
 
