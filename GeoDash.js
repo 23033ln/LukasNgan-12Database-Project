@@ -165,7 +165,7 @@ function endScreen(){
     text("your score was: "+score, 50, 110);
     textSize(14);
     text("press any key to restart", 50, 150);
-    firebase.database().ref(login/users/${GLOBAL_user.uid}/Geodashscore + score).set();
+    firebase.database().ref(login/users/$GLOBAL_user.uid/Geodashscore + score).set();
 }
 
 function resetGame(){

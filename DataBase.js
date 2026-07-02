@@ -12,14 +12,12 @@ async function fb_handleLogin(_user) {
     console.log("User is logged in");
     
     let Name = prompt("whats your name");
-    // FIXED: Changed 'name' to 'Name' to prevent undefined variable crash
     let Username = prompt("What do you want to be your username " + Name);
     
-    // FIXED: Set default starter scores so the script doesn't crash on undefined variables
+
     let Jumpdashlevelsbeaten = 0;
     let GeoDashscore = 0;
 
-    // FIXED: Combined all updates into one efficient block and fixed the path to match the leaderboard
     await firebase.database().ref('login/users/' + GLOBAL_user.uid).update({
         name: GLOBAL_user.displayName || Name, 
         Username: Username, 
@@ -52,7 +50,6 @@ function fb_popupLogin() {
   });
 }
 
-// Fixed variable declaration
 var highscoreTable = {
   JumpDash: {
     users: { lukas: 10, Coby: 5, Pasha: 6, Josh: 9, Callum: 4 }
@@ -64,16 +61,16 @@ var highscoreTable = {
 
 firebase.database().ref('/').update(highscoreTable);
 
-// LEADERBOARD RENDERER
+
 async function updateLeaderboardUI() {
-  // PATH FIXED: Now correctly matches the location where users are saved
+
   const usersRef = firebase.database().ref('login/users');
   
   try {
     const snapshot = await usersRef.orderByChild('GeoDashscore').limitToLast(5).once('value');
     
     const tableBody = document.getElementById('leaderboardRows');
-    if (!tableBody) return; // Prevent crashes if HTML element isn't loaded yet
+    if (!tableBody) return;
     tableBody.innerHTML = "";
 
     let leaderboardData = [];
@@ -99,7 +96,7 @@ async function updateLeaderboardUI() {
     leaderboardData.forEach((player, index) => {
       let rank = index + 1;
       
-      // FIXED: Added back the Rank cell so it aligns with 3-column HTML tables
+  
       let row = `
         <tr>
           <td style="padding: 8px;"><b>#${rank}</b></td>
