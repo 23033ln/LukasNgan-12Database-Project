@@ -62,6 +62,7 @@ var highscoreTable = {
 firebase.database().ref('/').update(highscoreTable);
 
 
+
 async function updateLeaderboardUI() {
 
   const usersRef = firebase.database().ref('login/users');
