@@ -43,6 +43,7 @@ async function fb_handleLogin(_user) {
 
 // to have the user login
 function fb_popupLogin() {
+   let login = prompt("Logging in...");
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then((result) => {
     GLOBAL_user = result.user;
